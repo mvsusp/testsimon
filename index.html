@@ -1,0 +1,449 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Open Sauce 2025 Schedule</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            background-color: #f5f5f5;
+            color: #333;
+            line-height: 1.6;
+        }
+        
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        header {
+            text-align: center;
+            padding: 20px 0;
+            background-color: #ff6b6b;
+            color: white;
+            margin: -20px -20px 20px -20px;
+        }
+        
+        h1 {
+            font-size: 2rem;
+            margin-bottom: 10px;
+        }
+        
+        .subtitle {
+            font-size: 1.1rem;
+            opacity: 0.9;
+        }
+        
+        .download-btn {
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            padding: 12px 24px;
+            font-size: 16px;
+            border-radius: 5px;
+            cursor: pointer;
+            margin: 20px auto;
+            display: block;
+            transition: background-color 0.3s;
+        }
+        
+        .download-btn:hover {
+            background-color: #45a049;
+        }
+        
+        .day-tabs {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 20px;
+            background-color: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        
+        .day-tab {
+            flex: 1;
+            padding: 15px;
+            text-align: center;
+            cursor: pointer;
+            background-color: white;
+            border: none;
+            font-size: 16px;
+            font-weight: 500;
+            transition: all 0.3s;
+        }
+        
+        .day-tab:hover {
+            background-color: #f0f0f0;
+        }
+        
+        .day-tab.active {
+            background-color: #ff6b6b;
+            color: white;
+        }
+        
+        .schedule-container {
+            display: none;
+        }
+        
+        .schedule-container.active {
+            display: block;
+        }
+        
+        .event {
+            background-color: white;
+            border-radius: 10px;
+            padding: 20px;
+            margin-bottom: 15px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            transition: transform 0.2s;
+        }
+        
+        .event:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+        }
+        
+        .event-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 10px;
+        }
+        
+        .event-time {
+            font-weight: bold;
+            color: #ff6b6b;
+            font-size: 1.1rem;
+        }
+        
+        .event-duration {
+            font-size: 0.9rem;
+            color: #666;
+        }
+        
+        .event-location {
+            background-color: #e3f2fd;
+            color: #1976d2;
+            padding: 4px 8px;
+            border-radius: 4px;
+            font-size: 0.85rem;
+            font-weight: 500;
+        }
+        
+        .event-title {
+            font-size: 1.2rem;
+            font-weight: 600;
+            margin-bottom: 10px;
+            color: #2c3e50;
+        }
+        
+        .event-description {
+            color: #666;
+            margin-bottom: 10px;
+            font-size: 0.95rem;
+        }
+        
+        .event-speakers {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-top: 10px;
+        }
+        
+        .speaker {
+            background-color: #f0f0f0;
+            padding: 4px 10px;
+            border-radius: 15px;
+            font-size: 0.85rem;
+            color: #555;
+        }
+        
+        .break-event {
+            background-color: #fff3cd;
+            border-left: 4px solid #ffc107;
+        }
+        
+        .social-event {
+            background-color: #d4edda;
+            border-left: 4px solid #28a745;
+        }
+        
+        @media (max-width: 600px) {
+            h1 {
+                font-size: 1.5rem;
+            }
+            
+            .subtitle {
+                font-size: 1rem;
+            }
+            
+            .day-tab {
+                font-size: 14px;
+                padding: 12px 8px;
+            }
+            
+            .event {
+                padding: 15px;
+            }
+            
+            .event-title {
+                font-size: 1.1rem;
+            }
+            
+            .event-header {
+                flex-direction: column;
+                gap: 8px;
+            }
+        }
+        
+        .loading {
+            text-align: center;
+            padding: 40px;
+            font-size: 1.2rem;
+            color: #666;
+        }
+        
+        .error {
+            background-color: #fee;
+            color: #c33;
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Open Sauce 2025</h1>
+            <p class="subtitle">July 25-27, 2025</p>
+        </header>
+        
+        <button class="download-btn" onclick="downloadICS()">📅 Download Schedule (ICS)</button>
+        
+        <div class="day-tabs">
+            <button class="day-tab active" onclick="showDay('friday')">Friday, July 25</button>
+            <button class="day-tab" onclick="showDay('saturday')">Saturday, July 26</button>
+            <button class="day-tab" onclick="showDay('sunday')">Sunday, July 27</button>
+        </div>
+        
+        <div id="friday" class="schedule-container active">
+            <div class="loading">Loading Friday schedule...</div>
+        </div>
+        
+        <div id="saturday" class="schedule-container">
+            <div class="loading">Loading Saturday schedule...</div>
+        </div>
+        
+        <div id="sunday" class="schedule-container">
+            <div class="loading">Loading Sunday schedule...</div>
+        </div>
+    </div>
+    
+    <script>
+        let scheduleData = null;
+        
+        // Load schedule data
+        async function loadSchedule() {
+            try {
+                const response = await fetch('opensauce-agenda-final.json');
+                const data = await response.json();
+                scheduleData = data;
+                renderSchedule();
+            } catch (error) {
+                console.error('Error loading schedule:', error);
+                document.querySelectorAll('.schedule-container').forEach(container => {
+                    container.innerHTML = '<div class="error">Error loading schedule data. Please refresh the page.</div>';
+                });
+            }
+        }
+        
+        // Render schedule for all days
+        function renderSchedule() {
+            if (!scheduleData) return;
+            
+            ['friday', 'saturday', 'sunday'].forEach(day => {
+                const container = document.getElementById(day);
+                const events = scheduleData.schedule[day];
+                
+                if (!events || events.length === 0) {
+                    container.innerHTML = '<div class="error">No events scheduled for this day.</div>';
+                    return;
+                }
+                
+                container.innerHTML = events.map(event => {
+                    const eventClass = event.type === 'break' ? 'event break-event' : 
+                                     event.type === 'social' ? 'event social-event' : 'event';
+                    
+                    return `
+                        <div class="${eventClass}">
+                            <div class="event-header">
+                                <div>
+                                    <div class="event-time">${event.time}</div>
+                                    ${event.duration ? `<div class="event-duration">${event.duration}</div>` : ''}
+                                </div>
+                                ${event.location ? `<div class="event-location">${event.location}</div>` : ''}
+                            </div>
+                            <div class="event-title">${event.title}</div>
+                            ${event.description ? `<div class="event-description">${event.description}</div>` : ''}
+                            ${event.speakers && event.speakers.length > 0 ? `
+                                <div class="event-speakers">
+                                    ${event.speakers.map(speaker => `<span class="speaker">${speaker}</span>`).join('')}
+                                </div>
+                            ` : ''}
+                        </div>
+                    `;
+                }).join('');
+            });
+        }
+        
+        // Show specific day
+        function showDay(day) {
+            // Update tabs
+            document.querySelectorAll('.day-tab').forEach(tab => tab.classList.remove('active'));
+            event.target.classList.add('active');
+            
+            // Update content
+            document.querySelectorAll('.schedule-container').forEach(container => {
+                container.classList.remove('active');
+            });
+            document.getElementById(day).classList.add('active');
+        }
+        
+        // Better showDay function
+        window.showDay = function(day) {
+            // Update tabs
+            document.querySelectorAll('.day-tab').forEach((tab, index) => {
+                tab.classList.remove('active');
+                if ((day === 'friday' && index === 0) || 
+                    (day === 'saturday' && index === 1) || 
+                    (day === 'sunday' && index === 2)) {
+                    tab.classList.add('active');
+                }
+            });
+            
+            // Update content
+            document.querySelectorAll('.schedule-container').forEach(container => {
+                container.classList.remove('active');
+            });
+            document.getElementById(day).classList.add('active');
+        }
+        
+        // Convert time to 24h format for ICS
+        function convertTo24Hour(time12h) {
+            const [time, modifier] = time12h.split(' ');
+            let [hours, minutes] = time.split(':');
+            
+            if (hours === '12') {
+                hours = '00';
+            }
+            
+            if (modifier === 'PM') {
+                hours = parseInt(hours, 10) + 12;
+            }
+            
+            return `${hours.toString().padStart(2, '0')}${minutes}00`;
+        }
+        
+        // Generate ICS file
+        function generateICS() {
+            if (!scheduleData) return null;
+            
+            const dateMap = {
+                friday: '20250725',
+                saturday: '20250726',
+                sunday: '20250727'
+            };
+            
+            let icsContent = [
+                'BEGIN:VCALENDAR',
+                'VERSION:2.0',
+                'PRODID:-//Open Sauce 2025//Schedule//EN',
+                'CALSCALE:GREGORIAN',
+                'METHOD:PUBLISH',
+                'X-WR-CALNAME:Open Sauce 2025',
+                'X-WR-TIMEZONE:America/Los_Angeles'
+            ];
+            
+            ['friday', 'saturday', 'sunday'].forEach(day => {
+                const events = scheduleData.schedule[day];
+                const date = dateMap[day];
+                
+                events.forEach((event, index) => {
+                    const uid = `${date}-${index}@opensauce.com`;
+                    const startTime = convertTo24Hour(event.time);
+                    
+                    // Calculate end time based on duration
+                    let endTime = startTime;
+                    if (event.duration) {
+                        const durationMatch = event.duration.match(/(\d+)\s*mins?/);
+                        if (durationMatch) {
+                            const minutes = parseInt(durationMatch[1]);
+                            const startHour = parseInt(startTime.substring(0, 2));
+                            const startMin = parseInt(startTime.substring(2, 4));
+                            const endTotalMinutes = startHour * 60 + startMin + minutes;
+                            const endHour = Math.floor(endTotalMinutes / 60);
+                            const endMin = endTotalMinutes % 60;
+                            endTime = `${endHour.toString().padStart(2, '0')}${endMin.toString().padStart(2, '0')}00`;
+                        }
+                    }
+                    
+                    icsContent.push('BEGIN:VEVENT');
+                    icsContent.push(`UID:${uid}`);
+                    icsContent.push(`DTSTART:${date}T${startTime}`);
+                    icsContent.push(`DTEND:${date}T${endTime}`);
+                    icsContent.push(`SUMMARY:${event.title}`);
+                    
+                    if (event.location) {
+                        icsContent.push(`LOCATION:${event.location}`);
+                    }
+                    
+                    let description = [];
+                    if (event.description) {
+                        description.push(event.description);
+                    }
+                    if (event.speakers && event.speakers.length > 0) {
+                        description.push(`Speakers: ${event.speakers.join(', ')}`);
+                    }
+                    if (description.length > 0) {
+                        icsContent.push(`DESCRIPTION:${description.join('\\n')}`);
+                    }
+                    
+                    icsContent.push('END:VEVENT');
+                });
+            });
+            
+            icsContent.push('END:VCALENDAR');
+            
+            return icsContent.join('\r\n');
+        }
+        
+        // Download ICS file
+        function downloadICS() {
+            const icsContent = generateICS();
+            if (!icsContent) {
+                alert('Schedule data not loaded yet. Please try again.');
+                return;
+            }
+            
+            const blob = new Blob([icsContent], { type: 'text/calendar;charset=utf-8' });
+            const link = document.createElement('a');
+            link.href = URL.createObjectURL(blob);
+            link.download = 'opensauce-2025-schedule.ics';
+            link.click();
+        }
+        
+        // Load schedule when page loads
+        loadSchedule();
+    </script>
+</body>
+</html>
