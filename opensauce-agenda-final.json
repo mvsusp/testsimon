@@ -1,0 +1,243 @@
+{
+  "metadata": {
+    "event": "Open Sauce 2025",
+    "dates": {
+      "friday": "July 18, 2025",
+      "saturday": "July 19, 2025",
+      "sunday": "July 20, 2025"
+    },
+    "scraped_at": "2025-07-22T19:42:33.935Z"
+  },
+  "schedule": {
+    "friday": [
+      {
+        "time": "09:30 AM",
+        "duration": "(10 mins)",
+        "title": "Schedule Overview",
+        "location": "stage",
+        "description": "Opening overview of the day's schedule"
+      },
+      {
+        "time": "03:30 PM",
+        "duration": "(40 mins)",
+        "title": "AFTERNOON BREAK",
+        "location": "Stage",
+        "type": "break"
+      },
+      {
+        "time": "03:35 PM",
+        "duration": "(30 mins)",
+        "title": "Round Table With Rene Ritchie",
+        "description": "Join this round table / AMA with Rene Ritchie to talk YouTube algorithms, creating content and really anything on your mind!",
+        "speakers": [
+          "Todd Beaupré",
+          "Rene Ritchie"
+        ]
+      },
+      {
+        "time": "06:30 PM",
+        "duration": "(120 mins)",
+        "title": "Industry Reception",
+        "type": "social"
+      }
+    ],
+    "saturday": [
+      {
+        "time": "10:30 AM",
+        "duration": "(45 mins)",
+        "title": "Schedule Overview"
+      },
+      {
+        "time": "12:00 PM",
+        "duration": "(45 mins)",
+        "title": "The BackYard - Again",
+        "location": "Main Stage",
+        "description": "We're back! Join as the cast of The Yard returns for more Backyard Science in the squeak-uel we've all been waiting for.",
+        "speakers": [
+          "Ludwig",
+          "Nick",
+          "Slime",
+          "The Backyard Scientist (Moderator)"
+        ]
+      },
+      {
+        "time": "01:00 PM",
+        "duration": "(30 mins)",
+        "title": "Robotics and Animatronics!",
+        "location": "Stage",
+        "description": "What if the robots could move?",
+        "speakers": [
+          "Odd_Jayy",
+          "Kiara's Workshop",
+          "Wicked Makers",
+          "Becky Stern",
+          "Aaed Musa",
+          "Mr. Volt (Moderator)"
+        ]
+      },
+      {
+        "time": "01:30 PM",
+        "duration": "(30 mins)",
+        "title": "Could AI Make This Panel?",
+        "location": "Second Stage",
+        "description": "It - made - this - description!",
+        "speakers": [
+          "Jabrils",
+          "Captain Disillusion",
+          "ThePrimeagen",
+          "Luke Lafreniere",
+          "Theo (Moderator)"
+        ]
+      },
+      {
+        "time": "02:00 PM",
+        "duration": "(60 mins)",
+        "title": "Let's make a game in an hourKevin Laird",
+        "location": "Second Stage"
+      },
+      {
+        "time": "03:30 PM",
+        "duration": "(60 mins)",
+        "title": "Why you need a producerMatt Warl",
+        "location": "Second Stage"
+      },
+      {
+        "time": "04:30 PM",
+        "duration": "(30 mins)",
+        "title": "gnireenignE: Reverse Engineering",
+        "location": "Second Stage",
+        "description": "gnireenigne s'taht won ,rehtegot kcab meht gnittup ,trapA sgniht gnikaT",
+        "speakers": [
+          "Strange Parts",
+          "Jeff Geerling",
+          "Ben Krasnow",
+          "Ben Eater",
+          "Jeremy Fielding",
+          "Stephen Hawes (Moderator)"
+        ]
+      },
+      {
+        "time": "05:00 PM",
+        "duration": "(45 mins)",
+        "title": "Are you dumber than a sixth grader?",
+        "location": "Main Stage",
+        "description": "Four creators vs four sixth graders. Who will win?",
+        "speakers": [
+          "NileRed",
+          "SmarterEveryDay",
+          "Atarabyte",
+          "Ted Nivison",
+          "Hank Green (Moderator)"
+        ]
+      },
+      {
+        "time": "05:30 PM",
+        "duration": "(30 mins)",
+        "title": "Doing It The Hard Way (Ye' Olde Makers)Ignoring the advances of technology over the past few decades is… a choice.Cody's LabHow To Make EverythingBobby Duke ArtsFarmCraft101",
+        "location": "Second Stage"
+      }
+    ],
+    "sunday": [
+      {
+        "time": "10:30 AM",
+        "duration": "(30 mins)",
+        "title": "Schedule Overview",
+        "location": "stage"
+      },
+      {
+        "time": "10:30 AM",
+        "duration": "(30 mins)",
+        "title": "Movie Magic: VFX",
+        "location": "Main Stage",
+        "description": "These magicians WILL share their secrets.",
+        "speakers": [
+          "Nick Laurant",
+          "Captain Disillusion",
+          "Sam Wickert",
+          "Brendan Forde",
+          "Wren (Moderator)"
+        ]
+      },
+      {
+        "time": "01:30 PM",
+        "duration": "(45 mins)",
+        "title": "Short Form Content",
+        "location": "Second Stage",
+        "description": "Why use many word when few do trick?",
+        "speakers": [
+          "AstroKobi",
+          "Emily The Engineer",
+          "Unnecessary Inventions",
+          "Atarabyte",
+          "Joseph's Machines",
+          "Rachel Pizzolato"
+        ]
+      },
+      {
+        "time": "01:45 PM",
+        "duration": "(30 mins)",
+        "title": "Indie Dev Roundtable \"What makes a great demo\"Gemporium Devs",
+        "location": "Stage"
+      },
+      {
+        "time": "02:45 PM",
+        "duration": "(30 mins)",
+        "title": "The Creative Process",
+        "location": "Second Stage",
+        "description": "Ideas are hard. From inspiration to execution, get an inside look at the creative journey behind the content.",
+        "speakers": [
+          "Evan and Katelyn",
+          "Ten Hundred",
+          "Nerdforge",
+          "TheOdd1sOut",
+          "Wren (Moderator)"
+        ]
+      },
+      {
+        "time": "03:15 PM",
+        "duration": "(30 mins)",
+        "title": "Farmer Consulting",
+        "location": "Stage",
+        "description": "Two \"farmers\" and one farmer walk into a panel...",
+        "speakers": [
+          "William Osman",
+          "The Backyard Scientist",
+          "FarmCraft101"
+        ]
+      },
+      {
+        "time": "03:45 PM",
+        "duration": "(60 mins)",
+        "title": "Pitching Your Game to PublishersOffbrand GamesAkupara",
+        "location": "Stage"
+      },
+      {
+        "time": "03:45 PM",
+        "duration": "(30 mins)",
+        "title": "Space (intentionally left blank)",
+        "location": "Main Stage",
+        "description": "Look up, and keep going for 60 something miles (100km).",
+        "speakers": [
+          "AstroKobi",
+          "Astro Alexandra",
+          "Scott Manley",
+          "Brian McManus",
+          "Matthew Dominick",
+          "Everyday Astronaut (Moderator)"
+        ]
+      },
+      {
+        "time": "04:30 PM",
+        "duration": "(30 mins)",
+        "title": "You Don't Need to CrunchPolyMars",
+        "location": "Second Stage"
+      },
+      {
+        "time": "05:00 PM",
+        "duration": "(45 mins)",
+        "title": "Voyagers of Nera Developers",
+        "location": "Second Stage"
+      }
+    ]
+  }
+}

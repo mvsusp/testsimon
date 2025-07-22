@@ -1,0 +1,11 @@
+node_modules/
+.DS_Store
+*.png
+opensauce-page.png
+opensauce-friday.png
+opensauce-saturday.png
+opensauce-sunday.png
+opensauce-agenda.json
+opensauce-agenda-cleaned.json
+scrape-opensauce.js
+scrape-opensauce-v2.js
