@@ -49,3 +49,22 @@ Successfully scraped 23 events across all three days:
 - Sunday: 10 events (Day 2)
 
 The data includes panels, talks, workshops, and social events featuring various content creators and tech personalities.
+
+## Live Demo
+
+Visit the mobile-friendly schedule at: https://[your-username].github.io/[your-repo-name]/
+
+## GitHub Pages Deployment
+
+1. Push this repository to GitHub
+2. Go to Settings → Pages
+3. Set Source to "GitHub Actions"
+4. The site will automatically deploy when you push to main/master branch
+
+## Local Development
+
+To run the webpage locally:
+```bash
+node serve.js
+```
+Then visit http://localhost:8080
