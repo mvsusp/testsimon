@@ -52,7 +52,7 @@ The data includes panels, talks, workshops, and social events featuring various 
 
 ## Live Demo
 
-Visit the mobile-friendly schedule at: https://[your-username].github.io/[your-repo-name]/
+Visit the mobile-friendly schedule at: https://mvsusp.github.io/testsimon/
 
 ## GitHub Pages Deployment
 
